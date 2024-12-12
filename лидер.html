@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Kawasaki Мотоцикл</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        header {
+            background-color: #009900;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            font-size: 2.5em;
+        }
+        nav {
+            background-color: #333;
+            overflow: hidden;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        nav ul li {
+            float: left;
+        }
+        nav ul li a {
+            display: block;
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-align: center;
+        }
+        nav ul li a:hover {
+            background-color: #575757;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .product-info {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+        .product-info img {
+            max-width: 500px;
+            border-radius: 8px;
+        }
+        .product-info .details {
+            flex: 1;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-left: 20px;
+        }
+        .details h2 {
+            margin-top: 0;
+            color: #009900;
+        }
+        .details p {
+            font-size: 1.2em;
+            line-height: 1.5;
+        }
+        .buy-button {
+            display: inline-block;
+            background-color: #ff6600;
+            color: white;
+            padding: 15px 30px;
+            font-size: 1.5em;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        .buy-button:hover {
+            background-color: #e65c00;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        /* Стили для слайдера */
+        .slider {
+            position: relative;
+            max-width: 100%;
+            margin-bottom: 30px;
+        }
+        .slides {
+            display: flex;
+            overflow: hidden;
+        }
+        .slides img {
+            max-width: 100%;
+            border-radius: 8px;
+            transition: transform 0.5s ease-in-out;
+        }
+        .slider-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 10px;
+            font-size: 2em;
+            border: none;
+            cursor: pointer;
+            z-index: 1;
+        }
+        .slider-button.left {
+            left: 10px;
+        }
+        .slider-button.right {
+            right: 10px;
+        }
+        /* Стили для формы */
+        .contact-form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+        .contact-form button {
+            background-color: #009900;
+            color: white;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .contact-form button:hover {
+            background-color: #007700;
+        }
+        /* Стили для блока с преимуществами */
+        .advantages {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 30px;
+        }
+        .advantages h3 {
+            color: #009900;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+        }
+        .advantages ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .advantages ul li {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Мотоцикл Kawasaki - Великолепие скорости!</h1>
+</header>
+
+<!-- Навигационное меню -->
+<nav>
+    <ul>
+        <li><a href="#home">Главная</a></li>
+        <li><a href="#about">О нас</a></li>
+        <li><a href="#products">Продукция</a></li>
+        <li><a href="#advantages">Преимущества</a></li>
+        <li><a href="#contact">Контакты</a></li>
+    </ul>
+</nav>
+
+<!-- Контент сайта -->
+<div class="container">
+    <!-- Слайдер изображений -->
+    <div id="slider" class="slider">
+        <button class="slider-button left" onclick="moveSlide(-1)">&#10094;</button>
+        <div class="slides">
+            <img src="https://example.com/kawasaki-bike1.jpg" alt="Kawasaki Motorcycle 1">
+            <img src="https://example.com/kawasaki-bike2.jpg" alt="Kawasaki Motorcycle 2">
+            <img src="https://example.com/kawasaki-bike3.jpg" alt="Kawasaki Motorcycle 3">
+        </div>
+        <button class="slider-button right" onclick="moveSlide(1)">&#10095;</button>
+    </div>
+
+    <!-- Продукция -->
+    <div id="products" class="product-info">
+        <img src="https://example.com/kawasaki-bike.jpg" alt="Kawasaki Motorcycle">
+        
+        <div class="details">
+            <h2>Kawasaki Ninja ZX-10R</h2>
+            <p>Совершенный мотоцикл для тех, кто ценит высокую производительность и динамичные поездки. Kawasaki Ninja ZX-10R предлагает вам уникальный опыт вождения с передовыми технологиями и потрясающим дизайном.</p>
+            <ul>
+                <li><strong>Двигатель:</strong> 998cc 4-цилиндровый</li>
+                <li><strong>Мощность:</strong> 200 л.с.</li>
+                <li><strong>Максимальная скорость:</strong> 300 км/ч</li>
+                <li><strong>Вес:</strong> 207 кг</li>
+            </ul>
+            <a href="https://www.example-shop.com/kawasaki-ninja" class="buy-button">Купить сейчас</a>
+        </div>
+    </div>
+
+    <!-- Преимущества -->
+    <div id="advantages" class="advantages">
+        <h3>Почему выбирают Kawasaki?</h3>
+        <ul>
+            <li>Высокая производительность</li>
+            <li>Инновационные технологии</li>
+            <li>Эстетичный и стильный дизайн</li>
+            <li>Превосходная надежность</li>
+            <li>Уникальные возможности для индивидуальной настройки</li>
+        </ul>
+    </div>
+
+    <!-- О нас -->
+    <div id="about" class="product-info" style="margin-top: 30px;">
+        <div class="details">
+            <h2>О нас</h2>
+            <p>Компания Kawasaki является мировым лидером в производстве мотоциклов и мототехники. Мы гордимся тем, что предлагаем нашим клиентам только самые лучшие модели, которые сочетают в себе передовые технологии, уникальный дизайн и отличные характеристики для высокоскоростных поездок.</p>
+        </div>
+    </div>
+
+    <!-- Контакты -->
+    <div id="contact" class="contact-form">
+        <h2>Контакты</h2>
+        <p>Вы можете связаться с нами по следующим контактам:</p>
+        <ul>
+            <li><strong>Телефон:</strong> +7 (123) 456-78-90</li>
+            <li><strong>Email:</strong> info@kawasaki.com</li>
+            <li><strong>Адрес:</strong> г. Москва, ул. Мотоциклистов, д. 1</li>
+        </ul>
+        
+        <h3>Форма обратной связи</h3>
+        <form action="#" method="post">
+            <input type="text" name="name" placeholder="Ваше имя" required>
+            <input type="email" name="email" placeholder="Ваш Email" required>
+            <textarea name="message" placeholder="Сообщение" rows="5" required></textarea>
+            <button type="submit">Отправить</button>
+        </form>
+    </div>
+
+    <!-- Карта Google -->
+    <div id="map" style="width: 100%; height: 400px; margin-top: 30px;">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d22443.891319095406!2d37.617633!3d55.755825!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x414abcbf7f5f5df5%3A0xf1220a5f9b160a4b!2sMoscow!5e0!3m2!1sen!2sru!4v1619405070501!5m2!1sen!2sru" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2024 Kawasaki - Все права защищены.</p>
+</footer>
+
+<script>
+    // Слайдер
+    let slideIndex = 0;
+    function moveSlide(step) {
+        const slides = document.querySelectorAll('.slides img');
+        slideIndex = (slideIndex + step + slides.length) % slides.length;
+        for (let i = 0; i < slides.length; i++) {
+            slides[i].style.transform = `translateX(-${slideIndex * 100}%)`;
+        }
+    }
+</script>
+
+</body>
+</html>
